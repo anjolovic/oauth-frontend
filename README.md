@@ -3,6 +3,7 @@
 This is a Next.js-based frontend application that integrates with a custom OAuth implementation provided by a Rails API backend.
 
 ## Project Structure
+```
 ├── README.md
 ├── components.json
 ├── next-env.d.ts
@@ -11,33 +12,34 @@ This is a Next.js-based frontend application that integrates with a custom OAuth
 ├── package.json
 ├── postcss.config.mjs
 ├── src
-│   ├── app
-│   │   ├── favicon.ico
-│   │   ├── fonts
-│   │   │   ├── GeistMonoVF.woff
-│   │   │   └── GeistVF.woff
-│   │   ├── globals.css
-│   │   └── layout.tsx
-│   ├── components
-│   │   ├── AuthProvider.tsx
-│   │   └── ui
-│   │       ├── button.tsx
-│   │       ├── card.tsx
-│   │       └── input.tsx
-│   ├── contexts
-│   │   ���── AuthProvider.tsx
-│   ├── lib
-│   │   └── utils.ts
-│   ├── pages
-│   │   ├── _app.tsx
-│   │   ├── dashboard.tsx
-│   │   ├── index.tsx
-│   │   ├── login.tsx
-│   │   └── signup.tsx
-│   └── utils
-│       └── api.ts
+│   ├── app
+│   │   ├── favicon.ico
+│   │   ├── fonts
+│   │   │   ├── GeistMonoVF.woff
+│   │   │   └── GeistVF.woff
+│   │   ├── globals.css
+│   │   └── layout.tsx
+│   ├── components
+│   │   ├── AuthProvider.tsx
+│   │   └── ui
+│   │       ├── button.tsx
+│   │       ├── card.tsx
+│   │       └── input.tsx
+│   ├── contexts
+│   │   └── AuthProvider.tsx
+│   ├── lib
+│   │   └── utils.ts
+│   ├── pages
+│   │   ├── _app.tsx
+│   │   ├── dashboard.tsx
+│   │   ├── index.tsx
+│   │   ├── login.tsx
+│   │   └── signup.tsx
+│   └── utils
+│       └── api.ts
 ├── tailwind.config.ts
 └── tsconfig.json
+```
 
 
 ## Features
