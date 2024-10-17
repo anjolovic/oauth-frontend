@@ -1,27 +1,26 @@
-import { useState, useContext } from 'react';
-import { AuthContext } from '../contexts/AuthProvider';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Link from 'next/link';
+import { useState, useContext } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function Signup() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [error, setError] = useState("");
   const auth = useContext(AuthContext);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
-      // Implement signup functionality in AuthProvider
       await auth?.signup(email, password, firstName, lastName);
     } catch (error) {
-      console.error('Signup failed:', error);
-      setError('Signup failed. Please try again.');
+      console.error("Signup failed:", error);
+      setError("Signup failed. Please try again.");
     }
   };
 
@@ -62,10 +61,15 @@ export default function Signup() {
               placeholder="Password"
               required
             />
-            <Button type="submit" className="w-full">Sign Up</Button>
+            <Button type="submit" className="w-full">
+              Sign Up
+            </Button>
           </form>
           <p className="mt-4 text-center">
-            Already have an account? <Link href="/login" className="text-blue-500 hover:underline">Log in</Link>
+            Already have an account?{" "}
+            <Link href="/login" className="text-blue-500 hover:underline">
+              Log in
+            </Link>
           </p>
         </CardContent>
       </Card>

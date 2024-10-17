@@ -1,24 +1,24 @@
-import { useState, useContext } from 'react';
-import { AuthContext } from '../contexts/AuthProvider';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import Link from 'next/link';
+import { useState, useContext } from "react";
+import { AuthContext } from "../contexts/AuthProvider";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import Link from "next/link";
 
 export default function Login() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
   const auth = useContext(AuthContext);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
+    setError("");
     try {
       await auth?.login(email, password);
     } catch (error) {
-      console.error('Login failed:', error);
-      setError('Login failed. Please check your credentials and try again.');
+      console.error("Login failed:", error);
+      setError("Login failed. Please check your credentials and try again.");
     }
   };
 
@@ -45,10 +45,15 @@ export default function Login() {
               placeholder="Password"
               required
             />
-            <Button type="submit" className="w-full">Login</Button>
+            <Button type="submit" className="w-full">
+              Login
+            </Button>
           </form>
           <p className="mt-4 text-center">
-            Don't have an account? <Link href="/signup" className="text-blue-500 hover:underline">Sign up</Link>
+            Don&apos;t have an account?{" "}
+            <Link href="/signup" className="text-blue-500 hover:underline">
+              Sign up
+            </Link>
           </p>
         </CardContent>
       </Card>
